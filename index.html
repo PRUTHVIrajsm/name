@@ -1,76 +1,76 @@
-<p>#include&lt;stdio.h&gt;</p>
-<p>#include&lt;stdlib.h&gt;</p>
-<p>main()</p>
-<p><span style="white-space:pre;">&nbsp; &nbsp;&nbsp;</span>{</p>
-<p><span style="white-space:pre;">&nbsp; &nbsp;&nbsp;</span>int *arr;</p>
-<p><span style="white-space:pre;">&nbsp; &nbsp;&nbsp;</span>int n, i,choice,pos,x,key,found=0;</p>
-<p><span style="white-space:pre;">&nbsp; &nbsp;&nbsp;</span>printf(&quot;Enter the number of elements in the array:&quot;);</p>
-<p><span style="white-space:pre;">&nbsp; &nbsp;&nbsp;</span>scanf(&quot;%d&quot;,&amp;n);</p>
-<p><span style="white-space:pre;">&nbsp;&nbsp;</span></p>
-<p><span style="white-space:pre;">&nbsp; &nbsp;&nbsp;</span>arr=(int *)malloc(n*sizeof(int));</p>
-<p><br></p>
-<p><span style="white-space: normal;"><span style="white-space:pre;">&nbsp; &nbsp;&nbsp;</span>printf(&quot;Enter the elements&quot;);</span></p>
-<p><span style="white-space: pre; white-space: normal;">&nbsp; &nbsp;&nbsp;</span></p>
-<p><span style="white-space: normal;"><span style="white-space:pre;">&nbsp; &nbsp;&nbsp;</span>for(i=0;i&lt;n;i++)</span></p>
-<p><span style="white-space: normal;"><span style="white-space:pre;">&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span>scanf(&quot;%d&quot;,(arr+i));</span></p>
-<p><span style="white-space: normal;"><span style="white-space:pre;">&nbsp; &nbsp;&nbsp;</span>printf(&quot;The elements of the array are :\n&quot;);</span></p>
-<p>&nbsp; <span style="white-space:pre;">&nbsp; &nbsp;&nbsp;</span>for(i=0;i&lt;n;i++)</p>
-<p><span style="white-space: normal;"><span style="white-space:pre;">&nbsp; &nbsp;&nbsp;</span>{</span></p>
-<p><span style="white-space: normal;"><span style="white-space:pre;">&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span>printf(&quot;(arr+%d)=%d\n&quot;,i,(arr+i));</span></p>
-<p><span style="white-space: normal;"><span style="white-space:pre;">&nbsp; &nbsp;&nbsp;</span>}<span style="white-space:pre;">&nbsp; &nbsp;&nbsp;</span></span></p>
-<p><span style="white-space: normal;"><span style="white-space:pre;">&nbsp; &nbsp;&nbsp;</span>while(1)</span></p>
-<p><span style="white-space: normal;"><span style="white-space:pre;">&nbsp; &nbsp;&nbsp;</span>{</span></p>
-<p>&nbsp;<span style="white-space:pre;">&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span>printf(&quot;1-&gt; INSERT &nbsp;2-&gt; DELETE &nbsp; 3-&gt; SEARCH &nbsp; &nbsp;4-&gt;EXIT\n&quot;);</p>
-<p><span style="white-space: normal;"><span style="white-space:pre;">&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span>printf(&quot;Give your choice:&quot;);</span></p>
-<p><span style="white-space: normal;"><span style="white-space:pre;">&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span>scanf(&quot;%d&quot;,&amp;choice);</span></p>
-<p><span style="white-space: normal;"><span style="white-space:pre;">&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span>switch(choice)</span></p>
-<p><span style="white-space: normal;"><span style="white-space:pre;">&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span>{</span></p>
-<p><span style="white-space: normal;"><span style="white-space:pre;">&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span>case 1:</span></p>
-<p><span style="white-space: normal;"><span style="white-space:pre;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span>printf(&quot;Enter the element to be inserted:&quot;);</span></p>
-<p><span style="white-space: normal;"><span style="white-space:pre;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span>scanf(&quot;%d&quot;,&amp;x);</span></p>
-<p><span style="white-space: normal;"><span style="white-space:pre;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span>printf(&quot;Enter the position to be inserted:&quot;);</span></p>
-<p><span style="white-space: normal;"><span style="white-space:pre;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span>scanf(&quot;%d&quot;,&amp;pos);</span></p>
-<p>&nbsp; &nbsp;<span style="white-space:pre;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span>n++;</p>
-<p><span style="white-space: normal;"><span style="white-space:pre;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span>for (i=n-1; i&gt;=pos; i--)</span></p>
-<p>&nbsp; &nbsp; &nbsp; <span style="white-space:pre;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span>&nbsp; &nbsp; &nbsp;*(arr+i) = *(arr+i-1);</p>
-<p><span style="white-space: normal;"><span style="white-space:pre;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></span></p>
-<p>&nbsp;<span style="white-space:pre;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span>*(arr+pos - 1) = x;</p>
-<p>&nbsp;</p>
-<p>&nbsp; &nbsp;<span style="white-space:pre;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span></p>
-<p>&nbsp; <span style="white-space:pre;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span>&nbsp; printf(&quot;The elements of the array are :\n&quot;);</p>
-<p>&nbsp; <span style="white-space:pre;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span>for(i=0;i&lt;n;i++)</p>
-<p><span style="white-space: normal;"><span style="white-space:pre;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span>{</span></p>
-<p><span style="white-space: normal;"><span style="white-space:pre;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span>printf(&quot;(arr+%d)=%d\n&quot;,i,(arr+i));</span></p>
-<p><span style="white-space: normal;"><span style="white-space:pre;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span>}</span></p>
-<p><span style="white-space: normal;"><span style="white-space:pre;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span>break;</span></p>
-<p><br></p>
-<p><span style="white-space:pre;">&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span>case 2:</p>
-<p><span style="white-space:pre;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span>printf(&quot;Enter the position of the element to be deleted:&quot;);</p>
-<p><span style="white-space:pre;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span>scanf(&quot;%d&quot;,&amp;pos);</p>
-<p><span style="white-space:pre;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span>for (i=pos; i&lt;=n-1; i++)</p>
-<p>&nbsp; &nbsp; &nbsp; <span style="white-space:pre;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span>&nbsp; &nbsp; &nbsp;*(arr+i-1) = *(arr+i);</p>
-<p><span style="white-space:pre;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span>n--;&nbsp;</p>
-<p>&nbsp; &nbsp;<span style="white-space:pre;">&nbsp; &nbsp; &nbsp; &nbsp;</span></p>
-<p>&nbsp; <span style="white-space:pre;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span>&nbsp; printf(&quot;The elements of the array are :\n&quot;);</p>
-<p>&nbsp; <span style="white-space:pre;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span>for(i=0;i&lt;n;i++)</p>
-<p><span style="white-space:pre;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span>{</p>
-<p><span style="white-space:pre;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span>printf(&quot;(arr+%d)=%d\n&quot;,i,(arr+i));</p>
-<p><span style="white-space:pre;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span>}</p>
-<p><span style="white-space:pre;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span>break;</p>
-<p><span style="white-space:pre;">&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span>case 3:&nbsp;</p>
-<p><span style="white-space:pre;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span>found=0;</p>
-<p><span style="white-space:pre;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span>printf(&quot;Enter the &nbsp;element to be searched:&quot;);</p>
-<p><span style="white-space:pre;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span>scanf(&quot;%d&quot;,&amp;key);</p>
-<p><span style="white-space:pre;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span>for (i=0; i&lt;=n; i++)</p>
-<p>&nbsp; &nbsp; &nbsp; <span style="white-space:pre;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span>&nbsp; &nbsp; &nbsp;if(*(arr+i)==key)</p>
-<p><span style="white-space:pre;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span>{</p>
-<p><span style="white-space:pre;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span>found=1;</p>
-<p><span style="white-space:pre;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span>printf(&quot;\n Search key %d is found at position %d&quot;,i+1);</p>
-<p><span style="white-space:pre;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span>}</p>
-<p><span style="white-space:pre;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span>if(found==0)</p>
-<p><span style="white-space:pre;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span>printf(&quot;Search key %d is not found&quot;,key);</p>
-<p><span style="white-space:pre;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span>break;</p>
-<p><span style="white-space:pre;">&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span>case 4: exit(1);</p>
-<p><span style="white-space:pre;">&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span>}</p>
-<p><span style="white-space:pre;">&nbsp; &nbsp;&nbsp;</span>}</p>
-<p>}</p>
+<p>#include<stdio.h>
+#include<stdlib.h>
+main()
+	{
+	int *arr;
+	int n, i,choice,pos,x,key,found=0;
+	printf("Enter the number of elements in the array:");
+	scanf("%d",&n);
+	/* Dynamic memory allocation */
+	arr=(int *)malloc(n*sizeof(int));
+
+	printf("Enter the elements");
+	
+	for(i=0;i<n;i++)
+		scanf("%d",(arr+i));
+	printf("The elements of the array are :\n");
+  	for(i=0;i<n;i++)
+	{
+		printf("(arr+%d)=%d\n",i,(arr+i));
+	}	
+	while(1)
+	{
+ 		printf("1-> INSERT  2-> DELETE   3-> SEARCH    4->EXIT\n");
+		printf("Give your choice:");
+		scanf("%d",&choice);
+		switch(choice)
+		{
+		case 1: //  Insert an element
+			printf("Enter the element to be inserted:");
+			scanf("%d",&x);
+			printf("Enter the position to be inserted:");
+			scanf("%d",&pos);
+   			n++;
+			for (i=n-1; i>=pos; i--)
+      			     *(arr+i) = *(arr+i-1);
+			// Insert at pos
+ 			*(arr+pos - 1) = x;
+ 
+   			 // print the updated array
+  			  printf("The elements of the array are :\n");
+  			for(i=0;i<n;i++)
+			{
+				printf("(arr+%d)=%d\n",i,(arr+i));
+			}
+			break;
+
+		case 2: // Delete an element
+			printf("Enter the position of the element to be deleted:");
+			scanf("%d",&pos);
+			for (i=pos; i<=n-1; i++)
+      			     *(arr+i-1) = *(arr+i);
+			n--; 
+   			 // print the updated array
+  			  printf("The elements of the array are :\n");
+  			for(i=0;i<n;i++)
+			{
+				printf("(arr+%d)=%d\n",i,(arr+i));
+			}
+			break;
+		case 3: // Search an element
+			found=0;
+			printf("Enter the  element to be searched:");
+			scanf("%d",&key);
+			for (i=0; i<=n; i++)
+      			     if(*(arr+i)==key)
+				{
+				found=1;
+				printf("\n Search key %d is found at position %d",i+1);
+				}
+			if(found==0)
+				printf("Search key %d is not found",key);
+			break;
+		case 4: exit(1);
+		}/* switch*/
+	}/while/
+}/main()/</p>
